@@ -28,14 +28,26 @@ main {
         height: 100%;
         gap: 1em;
         
-     .card {
-        cursor: pointer;
-        height: 11rem;
-        width: 11rem;
-        background-color: silver;
+     div {
         border-radius: 15px;
-    }
-    
+        background-color: silver;
+        cursor: pointer;
+        img {
+                
+                height: 11rem;
+                width: 11rem;
+                border-radius: 15px;
+        }
+
+        .disabled {
+
+            visibility: hidden;
+
+
+        }
+
+        }
+
     }
 
 }

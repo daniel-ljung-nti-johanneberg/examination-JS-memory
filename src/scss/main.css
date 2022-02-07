@@ -19,12 +19,18 @@ main #cards {
   height: 100%;
   gap: 1em;
 }
-main #cards .card {
+main #cards div {
+  border-radius: 15px;
+  background-color: silver;
   cursor: pointer;
+}
+main #cards div img {
   height: 11rem;
   width: 11rem;
-  background-color: silver;
   border-radius: 15px;
+}
+main #cards div .disabled {
+  visibility: hidden;
 }
 
 /*# sourceMappingURL=main.css.map */
