@@ -1,11 +1,16 @@
-function shuffle(cards) {
+
+
+
+
+function Shuffle(cards) {
 
     new_cards = cards.sort(() => Math.random() - 0.5)
 
     return new_cards
 }
 
-function generatecards() {
+
+function generateCards() {
     let cards = [];
 
     for (let i = 1; i <= 6; i++) {
@@ -19,8 +24,21 @@ function generatecards() {
 
     }
 
-    shuffle(cards)
+    Shuffle(cards)
     return cards
+}
+
+function sleep(delay) {
+    var start = new Date().getTime();
+    while (new Date().getTime() < start + delay);
+}
+
+
+function flipCard() {
+
+
+    
+
 }
 
 function Game() {
@@ -29,8 +47,9 @@ function Game() {
     console.log("Game started")
 
     let active = [];
-    let cards = generatecards()
-
+    let activeIndex = [];
+    let cards = generateCards()
+''
     // Render cards
 
     for (let i = 1; i <= 12; i++) {
@@ -46,7 +65,47 @@ function Game() {
         img.classList.add("disabled");
 
         imgcontainer.addEventListener("click", turncard => {
-            img.classList.remove("disabled");
+
+            if (active.length <= 2) {
+
+                img.classList.remove("disabled");
+                active.push(cards[i-1])
+                activeIndex.push(i + 1)
+
+            }
+
+            if (active.length == 2) {
+
+                
+
+                if (active[0] == active[1]) {
+                    console.log("match")
+                    active = [];
+                    activeIndex = [];
+                }
+
+                if (active[0] != active[1] ) {
+
+                    console.log(activeIndex)
+
+          
+                    document.querySelector(`#cards div:nth-child(${activeIndex[0]}) img`).classList.remove("disabled");
+                    document.querySelector(`#cards div:nth-child(${activeIndex[1]}) img`).classList.remove("disabled");
+
+                    sleep(300)
+
+                    document.querySelector(`#cards div:nth-child(${activeIndex[0]}) img`).classList.add("disabled");
+                    document.querySelector(`#cards div:nth-child(${activeIndex[1]}) img`).classList.add("disabled");
+
+                    sleep(300)
+
+                    
+                    activeIndex = [];
+                    active = [];
+                }
+
+            }
+      
     
         })
 
