@@ -39,9 +39,10 @@ main #cards div img {
   height: 11rem;
   width: 11rem;
   border-radius: 15px;
+  transition: opacity 0.2s;
 }
 main #cards div .disabled {
-  visibility: hidden;
+  opacity: 0;
 }
 
 /*# sourceMappingURL=main.css.map */

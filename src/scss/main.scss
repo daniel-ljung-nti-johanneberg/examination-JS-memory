@@ -1,4 +1,5 @@
 
+
 body {
 
     margin: 0;
@@ -51,11 +52,12 @@ main {
                 height: 11rem;
                 width: 11rem;
                 border-radius: 15px;
+                transition: opacity .2s;
         }
 
         .disabled {
 
-            visibility: hidden;
+            opacity: 0;
 
 
         }
