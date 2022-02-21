@@ -1,8 +1,13 @@
+
+// Shufflar kortarray
+
 function Shuffle(cards) {
     new_cards = cards.sort(() => Math.random() - 0.5)
     return new_cards
 }
 
+
+// Generera 24 kort
 
 function generateCards() {
     let cards = [];
@@ -21,8 +26,6 @@ function generateCards() {
     Shuffle(cards)
     return cards
 }
-
-
 
 
 function Game() {
@@ -49,7 +52,8 @@ function Game() {
 
         imgcontainer.addEventListener("click", turncard => {
 
-            if (active.length < 2 && disabled == false) {
+             // Kolla att aktiva kort är mindre än 2, samt att checken inte körs + att inte kunna klicka på samma kort igen
+            if (active.length < 2 && disabled == false && (i != activeIndex[0] || activeIndex[1]) ) {
 
                 img.classList.remove("disabled");
                 active.push(cards[i-1])
@@ -57,8 +61,12 @@ function Game() {
 
             }
 
+
+            //  Se ifall det är match elr ej, samt att kort-visning inte körs
+
             if (active.length == 2 && disabled == false) {
 
+                //  Matchning, rensa kortindex, samt kort-innehållet (src för bild)
                 if (active[0] == active[1]) {
 
                     console.log("match")
@@ -66,6 +74,8 @@ function Game() {
                     activeIndex = [];
 
                 }
+
+                // Ej matchning, disable för att hinna visa kort
 
                 if (active[0] != active[1]) {
 
