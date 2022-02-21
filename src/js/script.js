@@ -13,12 +13,12 @@ function Shuffle(cards) {
 function generateCards() {
     let cards = [];
 
-    for (let i = 1; i <= 6; i++) {
+    for (let i = 1; i <= 12; i++) {
         
         let currentImg = `img/char-${i}.png`;
         cards.push(currentImg);
 
-        if (cards.length == 6) {
+        if (cards.length == 12) {
             i = 0
         } 
 
@@ -28,10 +28,10 @@ function generateCards() {
     return cards
 }
 
-function sleep(delay) {
-    var start = new Date().getTime();
-    while (new Date().getTime() < start + delay);
-}
+// function sleep(delay) {
+//     var start = new Date().getTime();
+//     while (new Date().getTime() < start + delay);
+// }
 
 
 function flipCard() {
@@ -52,7 +52,7 @@ function Game() {
 ''
     // Render cards
 
-    for (let i = 1; i <= 12; i++) {
+    for (let i = 1; i <= 24; i++) {
 
         const field = document.getElementById("cards");
         
@@ -92,16 +92,14 @@ function Game() {
                     document.querySelector(`#cards div:nth-child(${activeIndex[0]}) img`).classList.remove("disabled");
                     document.querySelector(`#cards div:nth-child(${activeIndex[1]}) img`).classList.remove("disabled");
 
-                    sleep(300)
 
-                    document.querySelector(`#cards div:nth-child(${activeIndex[0]}) img`).classList.add("disabled");
-                    document.querySelector(`#cards div:nth-child(${activeIndex[1]}) img`).classList.add("disabled");
-
-                    sleep(300)
-
-                    
-                    activeIndex = [];
-                    active = [];
+                    setTimeout(() => {
+                        document.querySelector(`#cards div:nth-child(${activeIndex[0]}) img`).classList.add("disabled");
+                        document.querySelector(`#cards div:nth-child(${activeIndex[1]}) img`).classList.add("disabled");
+                        
+                        activeIndex = [];
+                        active = [];
+                    }, 1000)
                 }
 
             }
