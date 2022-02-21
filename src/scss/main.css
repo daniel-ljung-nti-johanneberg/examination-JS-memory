@@ -1,57 +1,47 @@
+body {
+  margin: 0;
+  color: whitesmoke;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+}
+
 main {
   height: 100%;
+  background-color: black;
 }
-
 main h1 {
   text-align: center;
+  margin: 0;
 }
-
 main #stats {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
 main #cards {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
+  max-width: 1250px;
   height: 100%;
   gap: 1em;
 }
-
 main #cards div {
   border-radius: 15px;
-  background-color: silver;
+  background-color: #222;
   cursor: pointer;
 }
-
 main #cards div img {
   height: 11rem;
   width: 11rem;
   border-radius: 15px;
 }
-
 main #cards div .disabled {
   visibility: hidden;
 }
+
 /*# sourceMappingURL=main.css.map */

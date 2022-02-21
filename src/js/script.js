@@ -1,7 +1,3 @@
-
-
-
-
 function Shuffle(cards) {
 
     new_cards = cards.sort(() => Math.random() - 0.5)
@@ -28,18 +24,8 @@ function generateCards() {
     return cards
 }
 
-// function sleep(delay) {
-//     var start = new Date().getTime();
-//     while (new Date().getTime() < start + delay);
-// }
 
 
-function flipCard() {
-
-
-    
-
-}
 
 function Game() {
 
@@ -70,13 +56,11 @@ function Game() {
 
                 img.classList.remove("disabled");
                 active.push(cards[i-1])
-                activeIndex.push(i + 1)
+                activeIndex.push(i)
 
             }
 
             if (active.length == 2) {
-
-                
 
                 if (active[0] == active[1]) {
                     console.log("match")
