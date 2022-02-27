@@ -53,14 +53,23 @@ function Game() {
         imgcontainer.addEventListener("click", turncard => {
 
              // Kolla att aktiva kort är mindre än 2, samt att checken inte körs + att inte kunna klicka på samma kort igen
-            if (active.length < 2 && disabled == false && (i != activeIndex[0] || i != activeIndex[1]) ) {
+            if (active.length < 2 && disabled == false && (i != (activeIndex[0] || activeIndex[1] ))) {
+
+
+                //console.log(`Index1 = ${activeIndex[0]}, Index2 = ${activeIndex[1]}`)
 
                 img.classList.remove("disabled");
                 active.push(cards[i-1])
                 activeIndex.push(i)
-                
+
             }
 
+            if (i == (activeIndex[0] || activeIndex[1] )) {
+
+                //console.log("samma kort")
+                return;
+
+            }
 
             //  Se ifall det är match elr ej, samt att kort-visning inte körs
 
