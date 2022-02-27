@@ -1,64 +1,67 @@
+@import "colors";
 
+@mixin layout {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
 
 body {
 
+    @include layout;
     margin: 0;
-    color: whitesmoke;
-    background-color: black;
-    display: flex;
-    justify-content: center;
+    color: $mintWhite;
+    background-color: $black;
 
 }
 
 main {
 
     height: 100%;
-
-    background-color: black;
+    background-color: $black;
 
     h1 {
 
         text-align: center;
         margin: 0;
+        margin-top: 1rem;
 
     }
 
     #stats {
 
-        display: flex;
+        @include layout;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
 
     }
 
     #cards {
     
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include layout;
         flex-wrap: wrap;
         width: 100%;
-        max-width: 1250px;
+        max-width: 78rem;
         height: 100%;
         gap: 1em;
         
      div {
-        border-radius: 15px;
-        background-color: #222;
+        
+        border-radius: 1rem;
+        background-color: $plateColor;
         cursor: pointer;
         img {
                 
                 height: 11rem;
                 width: 11rem;
-                border-radius: 15px;
+                border-radius: 1rem;
                 transition: opacity .2s;
         }
 
         .disabled {
 
             opacity: 0;
-
 
         }
 

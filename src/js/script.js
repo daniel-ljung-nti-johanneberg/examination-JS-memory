@@ -53,12 +53,12 @@ function Game() {
         imgcontainer.addEventListener("click", turncard => {
 
              // Kolla att aktiva kort är mindre än 2, samt att checken inte körs + att inte kunna klicka på samma kort igen
-            if (active.length < 2 && disabled == false && (i != activeIndex[0] || activeIndex[1]) ) {
+            if (active.length < 2 && disabled == false && (i != activeIndex[0] || i != activeIndex[1]) ) {
 
                 img.classList.remove("disabled");
                 active.push(cards[i-1])
                 activeIndex.push(i)
-
+                
             }
 
 
